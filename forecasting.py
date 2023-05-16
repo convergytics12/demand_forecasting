@@ -214,7 +214,7 @@ if file1 is not None:
         fore=model1.forecast(steps=6)
         dff=pd.DataFrame(data=list(fore.values),columns=['Forecasted Production'],index=pd.Series((fore.index.values)))
         dff=dff.reset_index().rename(columns={'index':'Date'})
-        import matplotlib.pyplot as plt
+        
         if(st.button('Start Forecasting')):
             st.subheader('Forecasted Production')
             fig = go.Figure()
@@ -222,10 +222,7 @@ if file1 is not None:
             fig.add_trace(go.Scatter(x=dff['Date'], y=dff['Forecasted Production'], name='Forecasted Production', line=dict(color='orange')))
             st.plotly_chart(fig)
             
-            fig, ax = plt.subplots()
-            ax.plot(df['Year_Month'], df['Production'])
-            ax.plot(dff['Date'], dff['Forecasted Production'])
-            st.pyplot(fig)
+   
             
        
             rad=st.radio('**Export Forecasted Production**',['.csv','.xlsx'])
