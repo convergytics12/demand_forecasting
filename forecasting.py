@@ -131,6 +131,8 @@ if file1 is not None:
         
         if(st.button('Start Forecasting')):
             st.subheader('Forecasted Production')
+            st.write(df['Year_Month'].dtype)
+            st.write(dff['Date'].dtype)
             fig = go.Figure()
             fig.add_trace(go.Scatter(x=df['Year_Month'], y=df['Production'], name='Actual Production', line=dict(color='blue')))
             fig.add_trace(go.Scatter(x=dff['Date'], y=dff['Forecasted Production'], name='Forecasted Production', line=dict(color='orange')))
