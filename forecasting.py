@@ -63,14 +63,14 @@ if file1 is not None:
         dd=pd.DataFrame(x.sum())
         dd=dd.reset_index()
         dd.rename(columns={'index':'Year_Month',0:'Production'},inplace=True)
+        fig = go.Figure()
+        fig.add_trace(go.Scatter(x=dd['Year_Month'], y=dd['Production'], name='Production', line=dict(color='blue')))
+        st.plotly_chart(fig)
         dd=dd.set_index('Year_Month')
         dd.index=pd.to_datetime(dd.index)
         finaldf=dd
         st.subheader('Information Provided')
         st.dataframe(finaldf)
-        fig = go.Figure()
-        fig.add_trace(go.Scatter(x=finaldf['Year_Month'], y=finaldf['Production'], name='Production', line=dict(color='blue')))
-        st.plotly_chart(fig)
         df=finaldf
              
         
