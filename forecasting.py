@@ -132,7 +132,7 @@ if file1 is not None:
         if(st.button('Start Forecasting')):
             st.subheader('Forecasted Production')
             fig = go.Figure()
-            #fig.add_trace(go.Scatter(x=df['Year_Month'], y=df['Production'], name='Actual Production', line=dict(color='blue')))
+            fig.add_trace(go.Scatter(x=df['Year_Month'], y=df['Production'], name='Actual Production', line=dict(color='blue')))
             fig.add_trace(go.Scatter(x=dff['Date'], y=dff['Forecasted Production'], name='Forecasted Production', line=dict(color='orange')))
             st.plotly_chart(fig)
             
