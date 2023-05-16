@@ -68,7 +68,9 @@ if file1 is not None:
         finaldf=dd
         st.subheader('Information Provided')
         st.dataframe(finaldf)
-        st.line_chart(finaldf)
+        fig = go.Figure()
+        fig.add_trace(go.Scatter(x=finaldf['Year_Month'], y=finaldf['Production'], name='Production', line=dict(color='blue')))
+        st.plotly_chart(fig)
         df=finaldf
              
         
