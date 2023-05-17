@@ -119,7 +119,7 @@ if file1 is not None:
         
         fig = go.Figure()
         fig.add_trace(go.Scatter(x=df['Year_Month'], y=df['Production'], name='Actual Production', line=dict(color='blue')))
-        fig.add_trace(go.Scatter(x=[df['Year_Month'][-1]], y=[df['Production'][-1]], mode='markers', name='End of Series 1', marker=dict(size=10)))
+        #fig.add_trace(go.Scatter(x=[df['Year_Month'][-1]], y=[df['Production'][-1]], mode='markers', name='End of Series 1', marker=dict(size=10)))
         fig.add_trace(go.Scatter(x=df['Year_Month'], y=df['prediction'], name='Predicted Production', line=dict(color='orange')))
         st.plotly_chart(fig)
         
