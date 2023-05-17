@@ -140,13 +140,14 @@ if file1 is not None:
             st.plotly_chart(fig)
             
        
-            rad=st.radio('**Export Forecasted Production**',['.csv','.xlsx'])
-            if(st.button('Download')):
-                if rad=='.csv':
-                    dff.to_csv(str(sb)+'_forecasted_data.csv')
-                if rad=='.xlsx':
-                    dff.to_excel(str(sb)+'_forecasted_data.xlsx')
-    
+           excel_button = st.button('Download as Excel')
+           if excel_button:
+               writer = pd.ExcelWriter('data.xlsx', engine='openpyxl')
+               dff.to_excel(writer, sheet_name='Sheet1', index=False)
+               writer.close()
+               with open('data.xlsx', 'rb') as f:
+                   excel_data = f.read()
+                   st.download_button(label='Click here to download', data=excel_data, file_name='data.xlsx', mime='application/vnd.openxmlformats-officedocument.spreadsheetml.sheet')
     if(sb==5001):
         x=finaldf[finaldf['Plant']==sb][['2020-01','2020-02','2020-03','2020-04','2020-05','2020-06','2020-07','2020-08','2020-09','2020-10','2020-11','2020-12','2021-01','2021-02','2021-03','2021-04','2021-05','2021-06','2021-07','2021-08','2021-09','2021-10','2021-11','2021-12','2022-01','2022-02','2022-03','2022-04','2022-05','2022-06','2022-07','2022-08','2022-09','2022-10','2022-11','2022-12']]
         dd=pd.DataFrame(x.sum())
