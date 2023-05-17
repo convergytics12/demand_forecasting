@@ -116,9 +116,8 @@ if file1 is not None:
         df['prediction'] = df['prediction'].shift(periods=-1)
         df['prediction'] = df['prediction'].replace(np.nan, 0)
         df = df[:-1]
-        #a=pd.DataFrame(df[['Year_Month','Production']].iloc[34]).T
-        
-        #a.rename(columns={'Production':'Forecasted Production'},inplace=True)
+        a=pd.DataFrame(df[['Year_Month','Production']].iloc[34]).T
+        a.rename(columns={'Year_Month':'Date','Production':'Forecasted Production'},inplace=True)
         
         
         fig = go.Figure()
@@ -134,8 +133,8 @@ if file1 is not None:
         fore=model1.predict(start = start,end = end)
         fore = fore.shift(periods=-1)
         dff=pd.DataFrame(data=list(fore.values),columns=['Forecasted Production'],index=pd.Series((fore.index.values)))
-        #dff = pd.concat([a,dff],ignore_index=True)
         dff=dff.reset_index().rename(columns={'index':'Date'})
+        dff = pd.concat([a,dff],ignore_index=True)
         dff = dff[:-1]
         
         if(st.button('Start Forecasting')):
@@ -213,6 +212,8 @@ if file1 is not None:
         df['prediction'] = df['prediction'].shift(periods=-1)
         df['prediction'] = df['prediction'].replace(np.nan, 0)
         df = df[:-1]
+        a=pd.DataFrame(df[['Year_Month','Production']].iloc[34]).T
+        a.rename(columns={'Year_Month':'Date','Production':'Forecasted Production'},inplace=True)
         
         
         fig = go.Figure()
@@ -229,6 +230,7 @@ if file1 is not None:
         fore = fore.shift(periods=-1)
         dff=pd.DataFrame(data=list(fore.values),columns=['Forecasted Production'],index=pd.Series((fore.index.values)))
         dff=dff.reset_index().rename(columns={'index':'Date'})
+        dff = pd.concat([a,dff],ignore_index=True)
         dff = dff[:-1]
         
         if(st.button('Start Forecasting')):
@@ -307,6 +309,8 @@ if file1 is not None:
         df['prediction'] = df['prediction'].shift(periods=-1)
         df['prediction'] = df['prediction'].replace(np.nan, 0)
         df = df[:-1]
+        a=pd.DataFrame(df[['Year_Month','Production']].iloc[34]).T
+        a.rename(columns={'Year_Month':'Date','Production':'Forecasted Production'},inplace=True)
         
         
         fig = go.Figure()
@@ -323,6 +327,7 @@ if file1 is not None:
         fore = fore.shift(periods=-1)
         dff=pd.DataFrame(data=list(fore.values),columns=['Forecasted Production'],index=pd.Series((fore.index.values)))
         dff=dff.reset_index().rename(columns={'index':'Date'})
+        dff = pd.concat([a,dff],ignore_index=True)
         dff = dff[:-1]
         
         if(st.button('Start Forecasting')):
@@ -401,6 +406,8 @@ if file1 is not None:
         df['prediction'] = df['prediction'].shift(periods=-1)
         df['prediction'] = df['prediction'].replace(np.nan, 0)
         df = df[:-1]
+        a=pd.DataFrame(df[['Year_Month','Production']].iloc[34]).T
+        a.rename(columns={'Year_Month':'Date','Production':'Forecasted Production'},inplace=True)
         
         
         fig = go.Figure()
@@ -417,6 +424,7 @@ if file1 is not None:
         fore = fore.shift(periods=-1)
         dff=pd.DataFrame(data=list(fore.values),columns=['Forecasted Production'],index=pd.Series((fore.index.values)))
         dff=dff.reset_index().rename(columns={'index':'Date'})
+        dff = pd.concat([a,dff],ignore_index=True)
         dff = dff[:-1]
         
         if(st.button('Start Forecasting')):
@@ -495,6 +503,8 @@ if file1 is not None:
         df['prediction'] = df['prediction'].shift(periods=-1)
         df['prediction'] = df['prediction'].replace(np.nan, 0)
         df = df[:-1]
+        a=pd.DataFrame(df[['Year_Month','Production']].iloc[34]).T
+        a.rename(columns={'Year_Month':'Date','Production':'Forecasted Production'},inplace=True)
         
         
         fig = go.Figure()
@@ -511,6 +521,7 @@ if file1 is not None:
         fore = fore.shift(periods=-1)
         dff=pd.DataFrame(data=list(fore.values),columns=['Forecasted Production'],index=pd.Series((fore.index.values)))
         dff=dff.reset_index().rename(columns={'index':'Date'})
+        dff = pd.concat([a,dff],ignore_index=True)
         dff = dff[:-1]
         
         if(st.button('Start Forecasting')):
@@ -589,6 +600,8 @@ if file1 is not None:
         df['prediction'] = df['prediction'].shift(periods=-1)
         df['prediction'] = df['prediction'].replace(np.nan, 0)
         df = df[:-1]
+        a=pd.DataFrame(df[['Year_Month','Production']].iloc[34]).T
+        a.rename(columns={'Year_Month':'Date','Production':'Forecasted Production'},inplace=True)
         
         
         fig = go.Figure()
@@ -605,6 +618,7 @@ if file1 is not None:
         fore = fore.shift(periods=-1)
         dff=pd.DataFrame(data=list(fore.values),columns=['Forecasted Production'],index=pd.Series((fore.index.values)))
         dff=dff.reset_index().rename(columns={'index':'Date'})
+        dff = pd.concat([a,dff],ignore_index=True)
         dff = dff[:-1]
         
         if(st.button('Start Forecasting')):
@@ -683,6 +697,8 @@ if file1 is not None:
         df['prediction'] = df['prediction'].shift(periods=-1)
         df['prediction'] = df['prediction'].replace(np.nan, 0)
         df = df[:-1]
+        a=pd.DataFrame(df[['Year_Month','Production']].iloc[34]).T
+        a.rename(columns={'Year_Month':'Date','Production':'Forecasted Production'},inplace=True)
         
         
         fig = go.Figure()
@@ -699,6 +715,7 @@ if file1 is not None:
         fore = fore.shift(periods=-1)
         dff=pd.DataFrame(data=list(fore.values),columns=['Forecasted Production'],index=pd.Series((fore.index.values)))
         dff=dff.reset_index().rename(columns={'index':'Date'})
+        dff = pd.concat([a,dff],ignore_index=True)
         dff = dff[:-1]
         
         if(st.button('Start Forecasting')):
@@ -777,6 +794,8 @@ if file1 is not None:
         df['prediction'] = df['prediction'].shift(periods=-1)
         df['prediction'] = df['prediction'].replace(np.nan, 0)
         df = df[:-1]
+        a=pd.DataFrame(df[['Year_Month','Production']].iloc[34]).T
+        a.rename(columns={'Year_Month':'Date','Production':'Forecasted Production'},inplace=True)
         
         
         fig = go.Figure()
@@ -793,6 +812,7 @@ if file1 is not None:
         fore = fore.shift(periods=-1)
         dff=pd.DataFrame(data=list(fore.values),columns=['Forecasted Production'],index=pd.Series((fore.index.values)))
         dff=dff.reset_index().rename(columns={'index':'Date'})
+        dff = pd.concat([a,dff],ignore_index=True)
         dff = dff[:-1]
         
         if(st.button('Start Forecasting')):
@@ -871,6 +891,8 @@ if file1 is not None:
         df['prediction'] = df['prediction'].shift(periods=-1)
         df['prediction'] = df['prediction'].replace(np.nan, 0)
         df = df[:-1]
+        a=pd.DataFrame(df[['Year_Month','Production']].iloc[34]).T
+        a.rename(columns={'Year_Month':'Date','Production':'Forecasted Production'},inplace=True)
         
         
         fig = go.Figure()
@@ -887,6 +909,7 @@ if file1 is not None:
         fore = fore.shift(periods=-1)
         dff=pd.DataFrame(data=list(fore.values),columns=['Forecasted Production'],index=pd.Series((fore.index.values)))
         dff=dff.reset_index().rename(columns={'index':'Date'})
+        dff = pd.concat([a,dff],ignore_index=True)
         dff = dff[:-1]
         
         if(st.button('Start Forecasting')):
@@ -965,6 +988,8 @@ if file1 is not None:
         df['prediction'] = df['prediction'].shift(periods=-1)
         df['prediction'] = df['prediction'].replace(np.nan, 0)
         df = df[:-1]
+        a=pd.DataFrame(df[['Year_Month','Production']].iloc[34]).T
+        a.rename(columns={'Year_Month':'Date','Production':'Forecasted Production'},inplace=True)
         
         
         fig = go.Figure()
@@ -981,6 +1006,7 @@ if file1 is not None:
         fore = fore.shift(periods=-1)
         dff=pd.DataFrame(data=list(fore.values),columns=['Forecasted Production'],index=pd.Series((fore.index.values)))
         dff=dff.reset_index().rename(columns={'index':'Date'})
+        dff = pd.concat([a,dff],ignore_index=True)
         dff = dff[:-1]
         
         if(st.button('Start Forecasting')):
