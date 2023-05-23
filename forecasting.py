@@ -931,7 +931,7 @@ if file1 is not None:
                 st.download_button(label='Click here to download', data=excel_data, file_name='data.xlsx', mime='application/vnd.openxmlformats-officedocument.spreadsheetml.sheet')
         
         
-        st.subheader('**SKU Level Forecasting**')
+        st.subheader('**Material Level Forecasting**')
         d = pd.read_excel("data1.xlsx",sheet_name='Data_new')
         sb1 = st.selectbox('**Select the Material no**',('Select an option',5016410000020,5016410000064,5016410000067,5016410000068,5016410000101,5016410000196,
                                                          5016410000209,5016410000225,5016410000226,5016410000241,5016410000242,5016410000270,5016410000271,
@@ -947,7 +947,10 @@ if file1 is not None:
         if sb1 in list1:
             d2 = d[d['SKU'].isin([sb1])]
             st.subheader('Information Provided')
-            st.dataframe(d2)
+            d10 = d2
+            d10 = d10.rename(columns={'SKU':'Material no'})
+            d10['Material no'] = d10['Material no'].astype('str')
+            st.dataframe(d10)
             d2 = d2.reset_index(drop=True)
             d2['Yr-mt'] = pd.to_datetime(d2['Yr-mt'])
             d2['Year'] = d2['Yr-mt'].dt.year
